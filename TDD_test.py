@@ -13,6 +13,8 @@
 #     assert functions.no_of_letter('mama') == 4
 #     assert functions.no_of_letter('mama.tata') == 8
 #     #nie odpowiedzielimsy na ten warunek
+import pytest
+
 import functions
 
 # def test_fissbuzz():
@@ -23,6 +25,11 @@ import functions
 #     assert functions.fissbuzz(5) == 'buzz'
 #     assert functions.fissbuzz(6) == 'fiss'
 #     assert functions.fissbuzz(10) == 'buzz'
+
+
+@pytest.mark.parametrize('number, result', [(1,1), (3, 'fiss'), (5,'buzz')])
+def test_fissbuzz_param(number, result):
+    assert test_fissbuzz_advanced(number) == result
 
 def test_fissbuzz_advanced():
     assert functions.fissbuzz(1.3) == 1
